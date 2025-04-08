@@ -1,8 +1,9 @@
 package com.armendtahiraga;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.*;
+import org.bson.Document;
+
+import static com.mongodb.client.model.Sorts.ascending;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +12,12 @@ public class Main {
         try {
             MongoClient mongoClient = MongoClients.create(uri);
             MongoDatabase database = mongoClient.getDatabase("VideoDB");
-            System.out.println("Verbindung erfolgreich zu: " + database.getName());
+            MongoCollection<Document> collection = database.getCollection("Videos");
+            FindIterable<Document> sortedVideos = collection.find().sort(ascending("title"));
+
+            for (Document video : sortedVideos) {
+                System.out.println(video.toJson());
+            }
         } catch (Exception exception) {
             exception.printStackTrace();
         }
