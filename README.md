@@ -8,3 +8,4 @@
 | 2025-04-08 | 14:10 - 14:20 | 10 min   | Keona  | 15 Datensätze in der Video Tabelle eingefügt.            |
 | 2025-04-08 | 15:00 - 15:10 | 10 min   | Armend | Anbindung mit Java.                                      |
 | 2025-04-08 | 15:10 - 15:20 | 10 min   | Armend | Alle Videos sortiert angezeigt.                          |
+| 2025-04-11 | 10:30 - 11:05 | 35 min   | Armend | Videosuche wurde erledigt.                               |
